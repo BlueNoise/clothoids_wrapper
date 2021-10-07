@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>clothoids_wrapper</name>
+  <version>0.0.0</version>
+  <description>The clothoid_wrapper package
+  This is a ROS wrapper package around the Clothoids repository.
+
+  https://github.com/ebertolazzi/Clothoids
+  </description>
+
+  <maintainer email="martin.gaudreault@live.com"> Martin Gaudreault </maintainer>
+
+  <author email="enrico.bertolazzi@unitn.it"> Enrico Bertolazzi </author>
+
+  <license>BSD 2-Clause "Simplified" License</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
