@@ -17,12 +17,23 @@ namespace G2lib {
 
   void
   AsyPlot::compileFile() {
+    const int ERROR_STATUS = -1;
     string cmdComp = "asy -f pdf "+ filename;
-    system(cmdComp.c_str());
+    const int cmdCompStatusCode = system(cmdComp.c_str());
+    if(ERROR_STATUS ==  cmdCompStatusCode)
+    {
+      std::cerr << "Compilation failed in AsyPlot::compileFile()" << std::endl;
+      return;
+    }
     string pdfFile = filename.substr(0,filename.find(".asy")) + ".pdf";
     std::cout << pdfFile << std::endl;
     string cmdOpen = "(okular " + pdfFile + " &> /dev/null )&";
-    system(cmdOpen.c_str());
+    const int cmdOpenStatusCode = system(cmdOpen.c_str());
+    if(ERROR_STATUS ==  cmdOpenStatusCode)
+    {
+      std::cerr << "Opening PDF failed in AsyPlot::compileFile()" << std::endl;
+      return;
+    }
   }
 
   void

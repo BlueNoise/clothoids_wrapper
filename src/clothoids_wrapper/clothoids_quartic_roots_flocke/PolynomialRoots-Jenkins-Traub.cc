@@ -761,7 +761,7 @@ namespace PolynomialRoots {
         valueType sr = bnd * xx;
         valueType u = -2*sr;
         // Second stage calculation, fixed quadratic
-        valueType lzi, lzr, szi, szr;
+        valueType lzi = 0.0, lzr = 0.0, szi = 0.0, szr = 0.0;
         indexType NZ = FixedShift( 20*(iter+1), sr, bnd, K, N, p, N+1, qp, u, lzi, lzr, szi, szr);
         ok = NZ != 0;
         if ( ok ) {
